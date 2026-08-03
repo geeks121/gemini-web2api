@@ -1,10 +1,11 @@
+<!-- markdown-translator:33daa17eca010b849e2bae7e724cf9b55271005f198bb95061d2c029733afb36 -->
 # Gemini-web2api
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Sophomoresty/gemini-web2api/main/logo.png" width="200" alt="gemini-web2api logo">
 </p>
 
-[英语](README.md)\|[中文文档](README.zh-CN.md)
+[英语](README.md)|[中文文档](README.zh-CN.md)
 
 高性能 Go 代理将 Google Gemini 的 Web 界面转换为 OpenAI 兼容的 API。零成本、跨平台、单一静态二进制文件。
 
@@ -12,18 +13,18 @@
 
 ## 主要特点
 
--   **可选 API 密钥**: 没有授权时`api_keys`配置后为空，OpenAI 风格的承载身份验证。
--   **兼容 OpenAI**：直接替代`/v1/chat/completions`,`/v1/models`， 和`/v1/responses`（法典 CLI）。
--   **多式联运（视觉）**：完全支持发送图像（`image_url`/base64) 到 Gemini，使用 Scotty 可恢复上传协议本机内置图像压缩。
--   **TLS 模拟**：内置支持通过模仿 Chrome/Edge TLS 指纹来绕过 Cloudflare/WAF`tls-client`🔥.
--   **工具调用**：全函数调用支持（OpenAI格式）。
--   **多种型号**：Flash (3.6)、Extend Thinking（20k+ 字符输出）、Pro、Auto、Lite。
--   **思考深度**：可通过调整推理`@think=N`后缀（0=最深，4=最浅）。
--   **网页搜索**：内置互联网访问（Gemini 的本机搜索）。
--   **高性能**：纯 Go 静态二进制文件，具有高并发 SSE 流吞吐量和最小的内存占用。
--   **跨平台**：零运行时依赖性，单个静态二进制文件。
--   **法典 CLI**：响应API（`/v1/responses`）用于 OpenAI Codex 集成。
--   **双子座命令行界面**：谷歌原生API（`/v1beta/models`）以实现 Gemini CLI 兼容性。
+* **可选 API 密钥**: 没有授权时`api_keys`配置后为空，OpenAI 风格的承载身份验证。
+* **兼容 OpenAI**：直接替代`/v1/chat/completions`,`/v1/models`， 和`/v1/responses`（法典 CLI）。
+* **多式联运（视觉）**：完全支持发送图像（`image_url`/base64) 到 Gemini，使用 Scotty 可恢复上传协议本机内置图像压缩。
+* **TLS 模拟**：内置支持通过模仿 Chrome/Edge TLS 指纹来绕过 Cloudflare/WAF`tls-client`🔥.
+* **工具调用**：全函数调用支持（OpenAI格式）。
+* **多种型号**：Flash (3.6)、Extend Thinking（20k+ 字符输出）、Pro、Auto、Lite。
+* **思考深度**：可通过调整推理`@think=N`后缀（0=最深，4=最浅）。
+* **网页搜索**：内置互联网访问（Gemini 的本机搜索）。
+* **高性能**：纯 Go 静态二进制文件，具有高并发 SSE 流吞吐量和最小的内存占用。
+* **跨平台**：零运行时依赖性，单个静态二进制文件。
+* **法典 CLI**：响应API（`/v1/responses`）用于 OpenAI Codex 集成。
+* **双子座命令行界面**：谷歌原生API（`/v1beta/models`）以实现 Gemini CLI 兼容性。
 
 ## 快速入门
 
@@ -118,11 +119,11 @@ docker compose up -d
 
 ### Cherry Studio / ChatBox / 任何 OpenAI 客户端
 
-| 场地    | 价值                                       |
-| ----- | ---------------------------------------- |
-| 基本网址  | `http://localhost:8081/v1`               |
-| API密钥 | 任何`api_keys`价值来自`config.json`;如果没有配置任何东西 |
-| 模型    | `gemini-3.5-flash-thinking`              |
+|领域|价值|
+| -------- | ---------------------------------------------------------------------------------- |
+|基本网址 |`http://localhost:8081/v1`|
+| API 密钥 |任何`api_keys`价值来自`config.json`;如果没有配置的话，什么都可以|
+|型号|`gemini-3.5-flash-thinking`|
 
 ### 卷曲
 
@@ -165,21 +166,21 @@ gemini
 
 支持 Google 本机 API 端点：
 
--   `GET /v1beta/models`— 列出型号
--   `POST /v1beta/models/{model}:generateContent`— 非流媒体
--   `POST /v1beta/models/{model}:streamGenerateContent`— 流媒体（上交所）
+* `GET /v1beta/models`— 列出型号
+* `POST /v1beta/models/{model}:generateContent`— 非流媒体
+* `POST /v1beta/models/{model}:streamGenerateContent`— 流媒体（上交所）
 
 ## 可用型号
 
-| 模型                               | 描述                   | 输出               |
-| -------------------------------- | -------------------- | ---------------- |
-| `gemini-3.6-flash`               | 全能型（最新）              | 〜12k 个字符         |
-| `gemini-3.5-flash`               | gemini-3.6-flash 的别名 | 〜12k 个字符         |
-| `gemini-3.5-flash-thinking`      | 延伸思维，最长产出            | **约 20,000 个字符** |
-| `gemini-3.5-flash-thinking-lite` | 适应性思维深度              | 约 15,000 个字符     |
-| `gemini-3.1-pro`                 | 高级数学和代码（需要 cookie）   | 〜12k 个字符         |
-| `gemini-auto`                    | 自动选型                 | 各不相同             |
-| `gemini-flash-lite`              | 最快的答案，轻量级            | 〜10k 个字符         |
+|型号|描述 |输出|
+| -------------------------------- | ----------------------------------- | -------------- |
+|`gemini-3.6-flash`|全能机型（最新）|约 12k 个字符 |
+|`gemini-3.5-flash`| gemini-3.6-flash 的别名 |约 12k 个字符 |
+|`gemini-3.5-flash-thinking`|延伸思维，最长产出 |**约 20,000 个字符**|
+|`gemini-3.5-flash-thinking-lite`|适应性思维深度|约 15,000 个字符 |
+|`gemini-3.1-pro`|高级数学和代码（需要 cookie）|约 12k 个字符 |
+|`gemini-auto`|汽车选型|变化 |
+|`gemini-flash-lite`|最快的答案，轻量级 | 〜10k 个字符 |
 
 ### 思考深度
 
@@ -211,7 +212,7 @@ gemini-3.5-flash-thinking@think=4   # shallowest
 
 ## 可选：Pro 版 Cookie
 
-匿名访问适用于所有型号，但是`gemini-3.1-pro`无需身份验证即可路由至 Flash。要获得真正的 Pro 路由，您需要一个**Gemini 高级版（付费订阅）**帐户cookie：
+匿名访问适用于所有型号，但是`gemini-3.1-pro`无需身份验证即可路由至 Flash。要获得真正的 Pro 路由，您需要一个**Gemini 高级版（付费订阅）**&#x5E10;户cookie：
 
 ```bash
 ./gemini-web2api --cookie-file cookie.txt
@@ -219,10 +220,10 @@ gemini-3.5-flash-thinking@think=4   # shallowest
 
 ### 如何获取cookies
 
-1.  打开 Chrome，转到[gemini.google.com](https://gemini.google.com)并使用 a 登录**双子座高级版**谷歌帐户
-2.  打开 DevTools (F12) → 应用程序 → Cookies →`https://gemini.google.com`
-3.  复制这些 cookie 值：`SID`,`HSID`,`SSID`,`APISID`,`SAPISID`,`__Secure-1PSID`
-4.  创造`cookie.txt`以这种格式：
+1. 打开 Chrome，转到[gemini.google.com](https://gemini.google.com)并使用 a 登录**双子座高级版**谷歌帐户
+2. 打开 DevTools (F12) → 应用程序 → Cookies →`https://gemini.google.com`
+3. 复制这些 cookie 值：`SID`,`HSID`,`SSID`,`APISID`,`SAPISID`,`__Secure-1PSID`
+4. 创造`cookie.txt`以这种格式：
 
 ```text
 SID=your_sid; HSID=your_hsid; SSID=your_ssid; APISID=your_apisid; SAPISID=your_sapisid; __Secure-1PSID=your_1psid
@@ -323,9 +324,9 @@ gemini-web2api.exe
 
 ## 局限性
 
--   **不是真正的 Pro/Ultra**：没有付费订阅 cookie，`gemini-3.1-pro`路由到相同的 Flash 模型。 “Pro”标签是 UI 首选项，而不是后端模型开关。
--   **仅单圈**：每个请求都是一个独立的对话。通过在提示中包含先前的消息来模拟多轮上下文。
--   **速率限制**：Google 可能会限制高频请求。服务器会自动重试，但持续的大量使用可能会被阻止。
+* **不是真正的 Pro/Ultra**：没有付费订阅 cookie，`gemini-3.1-pro`路由到相同的 Flash 模型。 “Pro”标签是 UI 首选项，而不是后端模型开关。
+* **仅单圈**：每个请求都是一个独立的对话。通过在提示中包含先前的消息来模拟多轮上下文。
+* **速率限制**：Google 可能会限制高频请求。服务器会自动重试，但持续的大量使用可能会被阻止。
 
 ## 执照
 
